@@ -50,14 +50,14 @@ salary:this.employeeForm.value.salary!,
     this.httpService.updateEmployeeById(this.employeeID,employee).subscribe(()=>{
       console.log("Success");
       this.toaster.success("Record Updated Successfully");
-      this.router.navigateByUrl("/")
+      this.router.navigateByUrl("/employee-list")
     });
   }
   else{
     this.httpService.createEmployee(employee).subscribe(()=>{
       console.log("Success");
       this.toaster.success("Record Created Successfully");
-      this.router.navigateByUrl("/")
+      this.router.navigateByUrl("/employee-list")
     });
   }
 

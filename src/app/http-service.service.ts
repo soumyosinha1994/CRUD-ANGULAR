@@ -24,4 +24,10 @@ return this.http.post(this.apiURL+"api/Employee/AddEmployee",employee)
    deleteEmployee(employeeId:number){
     return this.http.delete(this.apiURL+"api/Employee/DeleteEmployee?id="+employeeId);
    }
+   login(email:string,password:string){
+    return this.http.post<{ token: string }>(this.apiURL + 'api/Authentication/Login', {
+      email: email,
+      password: password,
+    });
+   }
 }
